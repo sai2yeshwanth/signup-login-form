@@ -6,8 +6,8 @@ import sequelizeConnection from "../config";
 
 interface UserAttributes {
     id: number,
-    primary_profile: number,
     user_name: string,
+    email : string,
     password: string
 
     created_at?: Date,
@@ -26,8 +26,8 @@ class User
 
 
     public id!: number;
-    public primary_profile!: number;
     public user_name!: string;
+    public email!: string;
     public password!: string;
 
 
@@ -45,16 +45,16 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
-        primary_profile: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         user_name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
         },
-
+        email:{
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,   
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false
