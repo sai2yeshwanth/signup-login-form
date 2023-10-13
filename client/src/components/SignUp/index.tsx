@@ -11,7 +11,7 @@ const SignUp = () => {
     const [userNameError, setUserNameError] = useState(false)
     const [emailError, setEmailError] = useState(false)
     const [passwordError, setPasswordError] = useState(false)
-    const [confirmPasswordError, setConfirmPasswordError] = useState(false)
+    // const [confirmPasswordError, setConfirmPasswordError] = useState(false)
 
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -134,7 +134,7 @@ const SignUp = () => {
                 onChange={onChangeUserName}
                 value={userName}
                 label="User Name"
-                sx={{ m: 1, minWidth: '35%' }}
+                sx={{ m: 1, width: '100%' }}
                 variant="outlined"
                 inputProps={{ maxLength: 16 }}
                 size="small"
@@ -148,7 +148,7 @@ const SignUp = () => {
                 id="outlined-basic"
                 onChange={onChangeEmail}
                 value={email} label="Email"
-                sx={{ m: 1, minWidth: '35%' }}
+                sx={{ m: 1, width: '100%' }}
                 variant="outlined"
                 inputProps={{ maxLength: 45 }}
                 size="small"
@@ -161,7 +161,7 @@ const SignUp = () => {
 
 
            
-            <FormControl sx={{ m: 1, minWidth: '35%' }} variant="outlined" size="small">
+            <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" size="small">
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"
@@ -189,7 +189,7 @@ const SignUp = () => {
             </FormControl>
             {passwordError ? <Typography variant="caption" display="block" sx={{ color: 'red' }} gutterBottom>
                 "Please Enter password (at least 4 characters )"</Typography> : null}
-            <FormControl sx={{ m: 1, minWidth: '35%' }} variant="outlined" size="small">
+            <FormControl sx={{ m: 1, width: '100%' }} variant="outlined" size="small">
                 <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
                 <OutlinedInput
                     id="outlined-adornment-password"
@@ -213,7 +213,7 @@ const SignUp = () => {
             </FormControl>
             {password != confirmPassword ? <Typography variant="caption" display="block" sx={{ color: 'red' }} gutterBottom>ConfirmPassword doesnot match</Typography> : " "}
 
-            <Box sx={{ display: 'flex', justifyContent: 'space-around', minWidth: '30%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
                 <Button variant="contained" onClick={onclickSubmit}>Submit</Button>
                 <Button variant="contained" onClick={onClickCancel}>Cancel</Button>
 
