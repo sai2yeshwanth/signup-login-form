@@ -1,6 +1,7 @@
 import { Alert, Box, Button,  FormControl,  IconButton,  InputAdornment,  InputLabel,  OutlinedInput,  Snackbar,  TextField, Typography } from "@mui/material"
 import { useState } from "react"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
+import { createUser } from "../../apiRequest/signupLogin"
 
 const SignUp = () => {
     const [userName, setUserName] = useState("")
@@ -103,18 +104,18 @@ const SignUp = () => {
 
 
         }
-        // const responCreateUser = await createUser(object)
-        // if (responCreateUser.message === "successfully user signed up") {
-        //     onClickCancel()
-        //     setMessage(responCreateUser.message)
-        //     setOpenToaster(true)
-        //     onClickCancel()
-        // }
-        // else {
-        //     setMessage(responCreateUser.message)
-        //     setErrorToaster(true)
-        // }
-        // console.log(object)
+        const responCreateUser = await createUser(object)
+        if (responCreateUser.message === "successfully user signed up") {
+            onClickCancel()
+            setMessage(responCreateUser.message)
+            setOpenToaster(true)
+            onClickCancel()
+        }
+        else {
+            setMessage(responCreateUser.message)
+            setErrorToaster(true)
+        }
+        console.log(object)
 
     }
     const onClickCancel = () => {
